@@ -18,6 +18,8 @@ spec:
       - image: amaya382/k8s-debugkit:0.0.2
         imagePullPolicy: always
         name: k8s-debugkit
+#      nodeSelector:
+#        kubernetes.io/hostname: minikube-m02
 ---
 apiVersion: v1
 kind: Service

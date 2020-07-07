@@ -17,12 +17,12 @@ RUN set -eux && \
       -O /usr/local/bin/kubectl && \
     chmod +x /usr/local/bin/kubectl && \
     apt update && \
-    apt install -y nano vim emacs build-essential oftware-properties-common \
+    apt install -y nano vim emacs build-essential software-properties-common \
                    pwgen python3-pip python mlocate awscli apt-transport-https \
                    ca-certificates gnupg tig ncdu oathtool mtr pigz gpa tree vim net-tools sudo \
                    iputils-ping telnet netcat tcpdump nmap \ 
                    dnsutils traceroute curl git htop man unzip vim wget && \
     apt clean && \
-    rm -rf /var/lib/apt/lists/*i
+    rm -rf /var/lib/apt/lists/*
 
 CMD ["./run.sh"]

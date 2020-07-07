@@ -15,7 +15,7 @@ spec:
         app: debugkit
     spec:
       containers:
-      - image: amaya382/k8s-debugkit:0.0.2
+      - image: debek/k8s-debugkit:v1
         imagePullPolicy: always
         name: k8s-debugkit
 #      nodeSelector:

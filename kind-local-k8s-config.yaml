@@ -1,0 +1,22 @@
+# kind create cluster --config kind-local-k8s-config.yaml
+# https://kind.sigs.k8s.io/docs/user/configuration/
+---
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: worker
+- role: worker
+  kubeadmConfigPatches:
+  - |
+    kind: JoinConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "my-label2=true"
+- role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: JoinConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "my-label3=true"

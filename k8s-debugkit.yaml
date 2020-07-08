@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - image: debek/k8s-debugkit:v1
-        imagePullPolicy: always
+        imagePullPolicy: Always
         name: k8s-debugkit
 #      nodeSelector:
 #        kubernetes.io/hostname: minikube-m02

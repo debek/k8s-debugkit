@@ -13,10 +13,10 @@ nodes:
     nodeRegistration:
       kubeletExtraArgs:
         node-labels: "my-label2=true"
-- role: control-plane
-  kubeadmConfigPatches:
-  - |
-    kind: JoinConfiguration
-    nodeRegistration:
-      kubeletExtraArgs:
-        node-labels: "my-label3=true"
+#- role: control-plane
+#  kubeadmConfigPatches:
+#  - |
+#    kind: JoinConfiguration
+#    nodeRegistration:
+#      kubeletExtraArgs:
+#        node-labels: "my-label3=true"

@@ -3,12 +3,22 @@ entries:
   debugkit:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-07-12T22:37:39.552977279+02:00"
+    created: "2020-07-12T22:56:06.847044996+02:00"
     description: Debugkit for k8s
-    digest: b64545ad15cccee20fa186f9e520a5565e26833f0e953a5cee238f628e9ebb11
+    digest: 3cf3f3150ab1c89c4a5a12c4e8c536350eaaf901b1d1c9dc169d3d0f17e2f404
     name: debugkit
     type: application
     urls:
-    - https://github.com/debek/k8s-debugkit/raw/master/debugkit-0.1.0.tgz
+    - debugkit-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2020-07-12T22:56:06.846345605+02:00"
+    description: Debugkit for k8s
+    digest: 04890d8d32ba39d1b782e2605562e7788416695ee556628bffb74a31ad86c272
+    name: debugkit
+    type: application
+    urls:
+    - debugkit-0.1.0.tgz
     version: 0.1.0
-generated: "2020-07-12T22:37:39.55233373+02:00"
+generated: "2020-07-12T22:56:06.845582936+02:00"

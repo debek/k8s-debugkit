@@ -9,6 +9,6 @@ entries:
     name: debugkit
     type: application
     urls:
-    - https://github.com/debek/k8s-debugkit/debugkit-0.1.0.tgz
+    - https://github.com/debek/k8s-debugkit/raw/master/debugkit-0.1.0.tgz
     version: 0.1.0
 generated: "2020-07-12T22:37:39.55233373+02:00"

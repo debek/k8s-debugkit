@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  chart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-07-12T22:26:20.250662759+02:00"
+    description: A Helm chart for Kubernetes
+    digest: 41cf6cc87e2765f0b632ec0f0f9231bf3d7a839488d91be083a90a6226ef792a
+    name: chart
+    type: application
+    urls:
+    - https://github.com/debek/k8s-debugkit/chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-07-12T22:26:20.249807334+02:00"

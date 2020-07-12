@@ -21,7 +21,7 @@ RUN set -eux && \
                    pwgen python3-pip python mlocate awscli apt-transport-https \
                    ca-certificates gnupg tig ncdu oathtool mtr pigz gpa tree vim net-tools sudo \
                    iputils-ping telnet netcat tcpdump nmap \ 
-                   dnsutils traceroute curl git htop man unzip vim wget && \
+                   dnsutils traceroute curl git htop man unzip vim wget jq && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 

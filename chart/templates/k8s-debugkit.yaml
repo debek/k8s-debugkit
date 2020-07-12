@@ -10,7 +10,6 @@ spec:
   selector:
     matchLabels:
       app: debugkit
-  serviceName: debugkit
   template:
     metadata:
       labels:

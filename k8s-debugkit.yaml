@@ -1,13 +1,12 @@
 # Dodać healthcheck
 
 apiVersion: apps/v1
-kind: StatefulSet
+kind: DaemonSet
 metadata:
   labels:
     app: debugkit
   name: debugkit
 spec:
-  replicas: 3
   selector:
     matchLabels:
       app: debugkit
@@ -17,18 +16,6 @@ spec:
       labels:
         app: debugkit
     spec:
-      affinity:
-        podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 1
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                  - key: "app"
-                    operator: In
-                    values:
-                    - debugkit
-              topologyKey: "kubernetes.io/hostname"
       containers:
       - image: debek/k8s-debugkit:v1
         imagePullPolicy: Always

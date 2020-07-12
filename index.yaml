@@ -1,14 +1,14 @@
 apiVersion: v1
 entries:
-  chart:
+  debugkit:
   - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2020-07-12T22:26:20.250662759+02:00"
-    description: A Helm chart for Kubernetes
-    digest: 41cf6cc87e2765f0b632ec0f0f9231bf3d7a839488d91be083a90a6226ef792a
-    name: chart
+    appVersion: 1.0.0
+    created: "2020-07-12T22:37:39.552977279+02:00"
+    description: Debugkit for k8s
+    digest: b64545ad15cccee20fa186f9e520a5565e26833f0e953a5cee238f628e9ebb11
+    name: debugkit
     type: application
     urls:
-    - https://github.com/debek/k8s-debugkit/chart-0.1.0.tgz
+    - https://github.com/debek/k8s-debugkit/debugkit-0.1.0.tgz
     version: 0.1.0
-generated: "2020-07-12T22:26:20.249807334+02:00"
+generated: "2020-07-12T22:37:39.55233373+02:00"

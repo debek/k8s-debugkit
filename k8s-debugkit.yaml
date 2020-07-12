@@ -1,7 +1,7 @@
 # Dodać healthcheck
 
 apiVersion: apps/v1
-kind: DaemonSet
+kind: StatefulSet
 metadata:
   labels:
     app: debugkit

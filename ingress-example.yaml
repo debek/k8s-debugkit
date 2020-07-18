@@ -1,0 +1,63 @@
+# Basic Ingress for GKE(NodePort) if we don't want use LoadBalancer
+
+#apiVersion: networking.k8s.io/v1beta1
+#kind: Ingress
+#metadata:
+#  annotations:
+#    kubernetes.io/ingress.class: nginx
+#  name: basic-ingress
+#spec:
+#  backend:
+#    serviceName: debugkit
+#    servicePort: 80
+#---
+#apiVersion: extensions/v1beta1
+#kind: Ingress
+#metadata:
+#  name: ingress-resource1
+#  annotations:
+#    kubernetes.io/ingress.class: nginx
+#    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+#spec:
+#  rules:
+#  - http:
+#      paths:
+#      - path: /
+#        backend:
+#          serviceName: airflow-1595100058-web
+#          servicePort: 8080
+
+### INGRESS POLICY ###
+#---
+#apiVersion: networking.k8s.io/v1
+#kind: NetworkPolicy
+#metadata:
+#  name: allow-all-ingress
+#spec:
+#  podSelector: {}
+#  ingress:
+#  - {}
+#  policyTypes:
+#  - Ingress
+
+#---
+#apiVersion: networking.k8s.io/v1
+#kind: NetworkPolicy
+#metadata:
+#  name: allow-all-egress
+#spec:
+#  podSelector: {}
+#  egress:
+#  - {}
+#  policyTypes:
+#  - Egress
+#---
+#apiVersion: networking.k8s.io/v1
+#kind: NetworkPolicy
+#metadata:
+#  name: default-allow-all
+#spec:
+#  podSelector: {}
+#  policyTypes:
+#  - Ingress
+#  - Egress

@@ -11,21 +11,48 @@
 #    serviceName: debugkit
 #    servicePort: 80
 #---
-#apiVersion: extensions/v1beta1
+### Ingress dla wielu serwisów pod jednym IP dla kilku domen
+###https://kubernetes.io/docs/concepts/services-networking/ingress/#name-based-virtual-hosting
+#apiVersion: networking.k8s.io/v1beta1
 #kind: Ingress
 #metadata:
-#  name: ingress-resource1
-#  annotations:
-#    kubernetes.io/ingress.class: nginx
-#    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+#  name: name-virtual-host-ingress
 #spec:
 #  rules:
-#  - http:
+#  - host: foo.bar.com
+#    http:
 #      paths:
-#      - path: /
+#      - backend:
+#          serviceName: service1
+#          servicePort: 80
+#  - host: bar.foo.com
+#    http:
+#      paths:
+#      - backend:
+#          serviceName: service2
+#          servicePort: 80
+#---
+#apiVersion: networking.k8s.io/v1beta1
+#kind: Ingress
+#metadata:
+#  name: simple-fanout-example
+#  annotations:
+#    kubernetes.io/ingress.class: nginx
+#    nginx.ingress.kubernetes.io/rewrite-target: /
+#spec:
+#  rules:
+#  - host: debugkit.local
+#    http:
+#      paths:
+#      - path: /debugkit
 #        backend:
-#          serviceName: airflow-1595100058-web
+#          serviceName: service1
+#          servicePort: 80
+#      - path: /airflow
+#        backend:
+#          serviceName: service2
 #          servicePort: 8080
+
 
 ### INGRESS POLICY ###
 #---

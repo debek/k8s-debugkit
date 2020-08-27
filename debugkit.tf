@@ -25,14 +25,14 @@ resource "kubernetes_namespace" "create_keycloak_namespace" {
 }
 
 # Debugkit only for testing purpose.
-data "helm_repository" "debugkit" {
+data "helm_repository" "debugkit_repository" {
   name = "debugkit"
   url  = "https://raw.githubusercontent.com/debek/k8s-debugkit/master"
 }
 
-resource "helm_release" "debugkit" {
+resource "helm_release" "debugkit_helm" {
   name         = "debugkit"
-  repository   = data.helm_repository.debugkit.metadata.0.name
+  repository   = data.helm_repository.debugkit_repository.metadata.0.name
   chart        = "debugkit/debugkit"
   namespace    = var.keycloak_namespace
   force_update = "true"

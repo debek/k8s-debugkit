@@ -6,6 +6,7 @@ metadata:
   labels:
     app: debugkit
   name: debugkit
+#  namespace: ingress
 spec:
   selector:
     matchLabels:
@@ -26,9 +27,11 @@ metadata:
   labels:
     app: debugkit
   name: debugkit
+#  namespace: ingress
 spec:
   ports:
-  - port: 80
+  - name: debugkitport
+    port: 8080
     protocol: TCP
     targetPort: 80
   selector:

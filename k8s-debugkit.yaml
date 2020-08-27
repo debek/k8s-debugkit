@@ -27,11 +27,11 @@ metadata:
   labels:
     app: debugkit
   name: debugkit
-  namespace: ingress
+#  namespace: ingress
 spec:
   ports:
   - name: debugkitport
-    port: 80
+    port: 8080
     protocol: TCP
     targetPort: 80
   selector:

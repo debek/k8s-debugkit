@@ -18,6 +18,12 @@ provider "kubernetes" {
   insecure = true
 }
 
+resource "kubernetes_namespace" "create_keycloak_namespace" {
+  metadata {
+    name = var.keycloak_namespace
+  }
+}
+
 # Debugkit only for testing purpose.
 data "helm_repository" "debugkit" {
   name = "debugkit"
@@ -25,9 +31,9 @@ data "helm_repository" "debugkit" {
 }
 
 resource "helm_release" "debugkit" {
-  name         = debugkit
+  name         = "debugkit"
   repository   = data.helm_repository.debugkit.metadata.0.name
-  chart        = debugkit/debugkit
+  chart        = "debugkit/debugkit"
   namespace    = var.keycloak_namespace
   force_update = "true"
   verify       = "false"
